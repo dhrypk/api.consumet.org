@@ -2,7 +2,8 @@ require('dotenv').config();
 import Redis from 'ioredis';
 import Fastify from 'fastify';
 import FastifyCors from '@fastify/cors';
-import fs from 'fs';
+import fs from 'fs'; // This is where the error starts
+import path from 'path'; // Add this line to complete the import
 
 import books from './routes/books';
 import anime from './routes/anime';
@@ -14,6 +15,7 @@ import meta from './routes/meta';
 import news from './routes/news';
 import chalk from 'chalk';
 import Utils from './utils';
+
 
 export const redis =
   process.env.REDIS_HOST &&
